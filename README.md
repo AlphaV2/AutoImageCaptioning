@@ -4,9 +4,13 @@ AutoImageCaptioning is a simple yet efficient image captioning system that gener
 
 🚀 Features
 ✅ Automatic Caption Generation – Generate meaningful captions for images.
+
 ✅ BLIP Model – Uses the Salesforce/blip-image-captioning-base model for high-quality captions.
+
 ✅ Optimized for Efficiency – Runs smoothly on CPU/GPU with minimal computational overhead.
+
 ✅ Minimal Dependencies – Requires only torch, transformers, and PIL for execution.
+
 ✅ Beginner-Friendly – Simple and easy to integrate into any project.
 
 🛠️ Installation
