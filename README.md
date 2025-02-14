@@ -1,4 +1,5 @@
-🖼️ AutoImageCaptioning
+**🖼️ AutoImageCaptioning**
+
 AutoImageCaptioning is a simple yet efficient image captioning system that generates textual descriptions for images using the BLIP (Bootstrapping Language-Image Pretraining) model. It is designed to be lightweight, requiring minimal storage and computation, making it ideal for beginners and small-scale projects.
 
 🚀 Features
