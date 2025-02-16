@@ -7,11 +7,12 @@ Original file is located at
     https://colab.research.google.com/drive/17dn1kTTvteSAZiPRPgyLACsRLmWg5JXU
 """
 
-!pip install torch torchvision transformers pillow
+!pip install torch torchvision transformers pillow gradio
 
 import torch
 from transformers import BlipProcessor, BlipForConditionalGeneration
 from PIL import Image
+import gradio as gr
 
 # Load BLIP model
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -28,15 +29,17 @@ def generate_caption(image_path):
     caption = processor.tokenizer.decode(output[0], skip_special_tokens=True)
     return caption
 
-from transformers import pipeline
+def upload_and_generate_caption(image):
+    caption = generate_caption(image)
+    return caption
 
-# Load a simple text-generation model
-caption_generator = pipeline("text-generation", model="gpt2", device=0 if torch.cuda.is_available() else -1)
+iface = gr.Interface(
+    fn=upload_and_generate_caption,
+    inputs=gr.inputs.Image(type="file"),
+    outputs="text",
+    title="Image Caption Generator",
+    description="Upload an image to generate a caption using the BLIP model."
+)
 
-def generate_caption(prompt):
-    result = caption_generator(prompt, max_length=30, num_return_sequences=1)
-    return result[0]['generated_text']
-
-image_path = "/content/download.jpg"  # Replace with your actual image path
-caption = generate_caption(image_path)
-print("Generated Caption:", caption)
+if __name__ == "__main__":
+    iface.launch()

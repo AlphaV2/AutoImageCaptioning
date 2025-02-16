@@ -17,7 +17,7 @@ AutoImageCaptioning is a simple yet efficient image captioning system that gener
 
 To use this model, install the required dependencies using: BASH
 
-pip install torch torchvision transformers pillow
+pip install torch torchvision transformers pillow gradio
 
 
 📸 Usage
@@ -33,6 +33,25 @@ from caption_generator import generate_caption
 caption = generate_caption("your_image.jpg")
 
 print("Generated Caption:", caption)
+
+
+# Using Gradio UI for Image Upload and Caption Generation: python
+
+import gradio as gr
+
+def upload_and_generate_caption(image):
+    caption = generate_caption(image)
+    return caption
+
+iface = gr.Interface(
+    fn=upload_and_generate_caption,
+    inputs=gr.inputs.Image(type="file"),
+    outputs="text",
+    title="Image Caption Generator",
+    description="Upload an image to generate a caption using the BLIP model."
+)
+
+iface.launch()
 
 
 📂 Project Structure: 
