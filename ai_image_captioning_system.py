@@ -7,12 +7,19 @@ Original file is located at
     https://colab.research.google.com/drive/17dn1kTTvteSAZiPRPgyLACsRLmWg5JXU
 """
 
+<<<<<<< HEAD
 !pip install torch torchvision transformers pillow gradio
+=======
+!pip install torch torchvision transformers pillow
+>>>>>>> aacd942 (Fixed line endings and updated image captioning system)
 
 import torch
 from transformers import BlipProcessor, BlipForConditionalGeneration
 from PIL import Image
+<<<<<<< HEAD
 import gradio as gr
+=======
+>>>>>>> aacd942 (Fixed line endings and updated image captioning system)
 
 # Load BLIP model
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -29,6 +36,7 @@ def generate_caption(image_path):
     caption = processor.tokenizer.decode(output[0], skip_special_tokens=True)
     return caption
 
+<<<<<<< HEAD
 def upload_and_generate_caption(image):
     caption = generate_caption(image)
     return caption
@@ -43,3 +51,17 @@ iface = gr.Interface(
 
 if __name__ == "__main__":
     iface.launch()
+=======
+from transformers import pipeline
+
+# Load a simple text-generation model
+caption_generator = pipeline("text-generation", model="gpt2", device=0 if torch.cuda.is_available() else -1)
+
+def generate_caption(prompt):
+    result = caption_generator(prompt, max_length=30, num_return_sequences=1)
+    return result[0]['generated_text']
+
+image_path = "/content/download.jpg"  # Replace with your actual image path
+caption = generate_caption(image_path)
+print("Generated Caption:", caption)
+>>>>>>> aacd942 (Fixed line endings and updated image captioning system)
