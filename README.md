@@ -1,8 +1,10 @@
 **🖼️ AutoImageCaptioning**
 
-AutoImageCaptioning is a simple yet efficient image captioning system that generates textual descriptions for images using the BLIP (Bootstrapping Language-Image Pretraining) model. It is designed to be lightweight, requiring minimal storage and computation, making it ideal for beginners and small-scale projects.
+AutoImageCaptioning is a simple yet powerful tool that automatically generates captions for images using the BLIP (Bootstrapping Language-Image Pretraining) model. Lightweight and efficient, it’s perfect for beginners and small-scale projects, requiring minimal storage and computation.
 
-🚀 Features
+🔗 Live Demo: Check it out here: https://huggingface.co/spaces/alpha203/AutoImageCaptioning
+
+**🚀 Features**
 ✅ Automatic Caption Generation – Generate meaningful captions for images.
 
 ✅ BLIP Model – Uses the Salesforce/blip-image-captioning-base model for high-quality captions.
@@ -13,14 +15,14 @@ AutoImageCaptioning is a simple yet efficient image captioning system that gener
 
 ✅ Beginner-Friendly – Simple and easy to integrate into any project.
 
-🛠️ Installation
+**🛠️ Installation**
 
 To use this model, install the required dependencies using: BASH
 
 pip install torch torchvision transformers pillow
 
 
-📸 Usage
+**📸 Usage**
 
 1️⃣ Import & Load the Model: python
 
@@ -30,17 +32,17 @@ from caption_generator import generate_caption
 2️⃣ Generate a Caption for an Image: python
 
 
-caption = generate_caption("your_image.jpg")
+caption = generate_caption("your_image.jpg") / In Updated Version # A New feature to uplaod using 
 
 print("Generated Caption:", caption)
 
 
-📂 Project Structure: 
+**📂 Project Structure: **
 
 
 AutoImageCaptioning/
 
-│── caption_generator.py  # Core Python script for caption generation  
+│── caption_generator.py /.ipynb(UPDATED VERSION)  # Core Python script for caption generation  
 
 │── test.jpg              # Sample image (replace with your own)  
 
@@ -48,7 +50,7 @@ AutoImageCaptioning/
 
 
 
-🎯 How It Works
+**🎯 How It Works**
 
 1️⃣ The script loads an image and preprocesses it.
 
@@ -58,7 +60,7 @@ AutoImageCaptioning/
 
 
 
-🏗️ Future Improvements
+**🏗️ Future Improvements**
 
 🔹 Optimize the model for lower latency and memory usage.
 
@@ -68,7 +70,7 @@ AutoImageCaptioning/
 
 🔹 Explore fine-tuning the model for domain-specific captioning.
 
-🤝 Contributing
+**🤝 Contributing**
 
 Contributions are welcome! If you happen to have any improvements, feel free to submit a pull request.
 
