@@ -36,6 +36,12 @@ caption = generate_caption("your_image.jpg") / In Updated Version # A New featur
 
 print("Generated Caption:", caption)
 
+SAMPLE OUTPUTS:
+![image](https://github.com/user-attachments/assets/b6cbe002-ea0d-4aff-ad21-e62ba79ca7b0)
+
+![image](https://github.com/user-attachments/assets/9feda259-7ef4-4acf-8db5-364ef7646365)
+
+
 
 **📂 Project Structure: **
 
